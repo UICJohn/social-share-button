@@ -21,7 +21,7 @@ module SocialShareButton
                                      :onclick => "return SocialShareButton.share(this);",
                                      :title => h(link_title) }.merge(extra_data).merge(special_data))
         else
-          html << %Q(<a class='ssb-icon ssb-instagram' href="http://instagram.com/_u/#{opts.fetch(:instagram_username){ SocialShareButton.config.instagram_username } }"></a>)
+          html << %Q(<a class='ssb-icon ssb-instagram' href="#{opts.fetch(:instagram_link){ "http://instagram.com/_u/#{SocialShareButton.config.instagram_username}" } }"></a>)
         end
       end
       html << "</div>"
